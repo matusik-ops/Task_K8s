@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-NGx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-NGx  
+  template:
+    metadata:
+      labels:
+        app: web-NGx    
+    spec:
+      containers:
+      - name: web-NGx  
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - name: html-volume
+            mountPath: /usr/share/nginx/html
+      volumes:
+        - name: html-volume
+          configMap:
+            name: html-config
+          
