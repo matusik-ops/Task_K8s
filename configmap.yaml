@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: htmlconfig
+data:
+  index.html: |
+    <html> 
+    <head></head> 
+    <body> 
+    <h1>WEB_1 is open.</h1>
+    <p> GOOD JOB </p> 
+
+    </body> 
+    </html>
