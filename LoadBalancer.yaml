@@ -7,7 +7,7 @@ spec:
     app: webNGx
   ports:
   - port: 80
-    targetPort: vproapp-port
+    targetPort: 80
     protocol: TCP
   type: LoadBalancer
   

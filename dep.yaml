@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webNGx
+  name: web-ngx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webNGx  
+      app: web-ngx  
   template:
     metadata:
       labels:
-        app: webNGx    
+        app: web-ngx    
     spec:
       containers:
-      - name: webNGx  
+      - name: web-ngx  
         image: nginx:latest
         ports:
         - containerPort: 80
@@ -23,5 +23,5 @@ spec:
       volumes:
         - name: html-volume
           configMap:
-            name: htmlconfig
+            name: html-config
           
